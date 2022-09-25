@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [3.15.0](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.14.4...v3.15.0) (2022-09-25)
+
+
+### Features
+
+* Add IPAM IPv4 support ([#716](https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/716)) ([6eddcad](https://github.com/terraform-aws-modules/terraform-aws-vpc/commit/6eddcad72867cd9df536d13ea8fdac15e0eebbd4))
+
+### [3.14.4](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.14.3...v3.14.4) (2022-09-05)
+
+
+### Bug Fixes
+
+* Remove EC2-classic deprecation warnings by hardcoding classiclink values to `null` ([#826](https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/826)) ([736931b](https://github.com/terraform-aws-modules/terraform-aws-vpc/commit/736931b0a707115a1fbeb45e0d6f784199cba95e))
+
+### [3.14.3](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.14.2...v3.14.3) (2022-09-02)
+
+
+### Bug Fixes
+
+* Allow `security_group_ids` to take `null` values ([#825](https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/825)) ([67ef09a](https://github.com/terraform-aws-modules/terraform-aws-vpc/commit/67ef09a1717f155d9a2f22a867230bf872af4cef))
+
+### [3.14.2](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.14.1...v3.14.2) (2022-06-20)
+
+
+### Bug Fixes
+
+* Compact CIDR block outputs to avoid empty diffs ([#802](https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/802)) ([c3fd156](https://github.com/terraform-aws-modules/terraform-aws-vpc/commit/c3fd1566df23cc4a2d3447b1964956964b9830a3))
+
+### [3.14.1](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.14.0...v3.14.1) (2022-06-16)
+
+
+### Bug Fixes
+
+* Declare data resource only for requested VPC endpoints ([#800](https://github.com/terraform-aws-modules/terraform-aws-vpc/issues/800)) ([024fbc0](https://github.com/terraform-aws-modules/terraform-aws-vpc/commit/024fbc01bf468240213666dfd4428f5b425794d1))
+
 ## [3.14.0](https://github.com/terraform-aws-modules/terraform-aws-vpc/compare/v3.13.0...v3.14.0) (2022-03-31)
 
 

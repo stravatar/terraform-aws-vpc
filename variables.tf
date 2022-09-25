@@ -11,7 +11,7 @@ variable "name" {
 }
 
 variable "cidr" {
-  description = "The CIDR block for the VPC. Default value is a valid CIDR, but not acceptable by AWS and should be overridden"
+  description = "(Optional) The IPv4 CIDR block for the VPC."
   type        = string
   default     = "0.0.0.0/0"
 }
@@ -280,14 +280,16 @@ variable "enable_dns_support" {
   default     = true
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "enable_classiclink" {
-  description = "Should be true to enable ClassicLink for the VPC. Only valid in regions and accounts that support EC2 Classic."
+  description = "[DEPRECATED](https://github.com/hashicorp/terraform/issues/31730) Should be true to enable ClassicLink for the VPC. Only valid in regions and accounts that support EC2 Classic."
   type        = bool
   default     = null
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "enable_classiclink_dns_support" {
-  description = "Should be true to enable ClassicLink DNS Support for the VPC. Only valid in regions and accounts that support EC2 Classic."
+  description = "[DEPRECATED](https://github.com/hashicorp/terraform/issues/31730) Should be true to enable ClassicLink DNS Support for the VPC. Only valid in regions and accounts that support EC2 Classic."
   type        = bool
   default     = null
 }
@@ -694,8 +696,9 @@ variable "default_vpc_enable_dns_hostnames" {
   default     = false
 }
 
+# tflint-ignore: terraform_unused_declarations
 variable "default_vpc_enable_classiclink" {
-  description = "Should be true to enable ClassicLink in the Default VPC"
+  description = "[DEPRECATED](https://github.com/hashicorp/terraform/issues/31730) Should be true to enable ClassicLink in the Default VPC"
   type        = bool
   default     = false
 }
@@ -1185,6 +1188,12 @@ variable "flow_log_per_hour_partition" {
   description = "(Optional) Indicates whether to partition the flow log per hour. This reduces the cost and response time for queries."
   type        = bool
   default     = false
+}
+
+variable "ipv4_ipam_pool_id" {
+  description = "(Optional) The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR."
+  type        = string
+  default     = null
 }
 
 variable "putin_khuylo" {

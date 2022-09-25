@@ -20,12 +20,14 @@ locals {
 resource "aws_vpc" "this" {
   count = local.create_vpc ? 1 : 0
 
-  cidr_block                       = var.cidr
+  cidr_block        = var.cidr
+  ipv4_ipam_pool_id = var.ipv4_ipam_pool_id
+
   instance_tenancy                 = var.instance_tenancy
   enable_dns_hostnames             = var.enable_dns_hostnames
   enable_dns_support               = var.enable_dns_support
-  enable_classiclink               = var.enable_classiclink
-  enable_classiclink_dns_support   = var.enable_classiclink_dns_support
+  enable_classiclink               = null # https://github.com/hashicorp/terraform/issues/31730
+  enable_classiclink_dns_support   = null # https://github.com/hashicorp/terraform/issues/31730
   assign_generated_ipv6_cidr_block = var.enable_ipv6
 
   tags = merge(
@@ -1234,7 +1236,7 @@ resource "aws_default_vpc" "this" {
 
   enable_dns_support   = var.default_vpc_enable_dns_support
   enable_dns_hostnames = var.default_vpc_enable_dns_hostnames
-  enable_classiclink   = var.default_vpc_enable_classiclink
+  enable_classiclink   = null # https://github.com/hashicorp/terraform/issues/31730
 
   tags = merge(
     { "Name" = coalesce(var.default_vpc_name, "default") },
